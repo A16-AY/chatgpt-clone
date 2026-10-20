@@ -1,0 +1,107 @@
+
+
+.message {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar.user {
+  background-color: #5436da;
+}
+
+.avatar.assistant {
+  background-color: #10a37f;
+}
+
+.content {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ececec;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+.message.user .content {
+  background-color: #2f2f2f;
+  padding: 12px 16px;
+  border-radius: 16px;
+  max-width: 75%;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.message.assistant .content {
+  background-color: transparent;
+  padding: 0;
+  max-width: 100%;
+}
+
+
+.content h1, .content h2, .content h3, .content h4 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.content p {
+  margin-bottom: 12px;
+}
+
+.content ul, .content ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.content li {
+  margin-bottom: 6px;
+}
+
+
+.content code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #f87171;
+}
+
+
+.content pre {
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.content pre code {
+  background-color: transparent !important;
+  color: #d4d4d4;
+  padding: 0;
+  border-radius: 0;
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+}
