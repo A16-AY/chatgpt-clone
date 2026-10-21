@@ -10,11 +10,12 @@ import { errorHandler } from './src/middleware/error-handler.js';
 const app = express();
 
 
-app.use(
-  cors({
-    origin: 'http://localhost:5173', 
-  })
-);
+// app.use(
+//   cors({
+//     origin: 'http://localhost:5173', 
+//   })
+// );
+app.use(cors());
 
 app.use(express.json());
 
@@ -28,17 +29,19 @@ async function startServer() {
   try {
     const connection = await db.getConnection();
     console.log('Db connected');
-    connection.release(); 
-
-    app.listen(3888, (err) => {
-      if (err) {
-        throw err;
-      }
-      console.log('Server is running on port http://localhost:3888');
-    });
+    connection.release();
   } catch (error) {
-    console.error('Error starting server:', error.message);
+    console.error('Error connecting to DB (continuing without DB):', error.message);
   }
+
+  const PORT = process.env.PORT || 3888;
+  app.listen(PORT, (err) => {
+    if (err) {
+      console.error('Error starting server:', err.message);
+      return;
+    }
+    console.log(`Server is running on port ${PORT}`);
+  });
 }
 
 startServer();
