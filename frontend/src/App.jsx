@@ -7,7 +7,8 @@ import MessageList from './component/MessageList/MessageList';
 import ChatInput from './component/chatinput/Chatinput';
 import './App.css';
 
-const API_BASE_URL = 'http://localhost:3888/api';
+// const API_BASE_URL = 'http://localhost:3888/api';
+const API_BASE_URL = 'https://gpt-clone-backend-gq8p.onrender.com/api';
 
 function App() {
   const [conversations, setConversations] = useState([]);
